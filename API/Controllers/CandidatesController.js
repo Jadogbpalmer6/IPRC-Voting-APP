@@ -97,7 +97,16 @@ module.exports = {
 		}catch(err){
 			res.status(404).json({error: err});
 		}
+	},
+
+	viewResults : function(req,res){
+		try{
+			res.json('result test')
+		}catch(err){
+			res.status(404).json({error: err});
+		}
 	}
+
 	
 }
 
