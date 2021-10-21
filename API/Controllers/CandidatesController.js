@@ -97,24 +97,7 @@ module.exports = {
 		}catch(err){
 			res.status(404).json({error: err});
 		}
-	},
-
-}
-	exports.viewResults = async(req,res) => {
-		try{
-			CandidatesModel.viewResults().then(function(rows){
-				const candidates = await rows.map(candidate => {
-			      return {
-			      	CandidatesModel.RetrieveCandidate(candidate.candid),
-			        marks : candidate.marks,
-			      }
-			    });
-
-			    res.send(candidates);
-			})
-		}catch(err){
-			res.status(404).json({error: err});
-		}
 	}
 	
+}
 
