@@ -3,15 +3,13 @@
 Admin
 -------
 -add voter
--define campaign date
 -define candidate condition
 -publish post for voting
 -check applied candidates
--update voter
 -publish results
 -add/remove user
 
-
+sql injection
 
 student
 -------
@@ -24,7 +22,7 @@ student
 
 left
 -----
-->
+->marks
 
 
 

@@ -85,6 +85,32 @@ module.exports = {
 		}catch(err){
 			res.status(404).json({'error': "err"});
 		}
+	},
+
+	candidatePosition: function(req,res){
+		try{
+			const posID = req.params.id;
+
+			CandidatesModel.viewCandidates(posID).then(function(rows){
+				res.status(200).json(rows);
+			})
+		}catch(err){
+			res.status(404).json({error: err});
+		}
+	},
+
+
+	viewResults : function(req,res){
+		try{
+			const posID = req.params.id;
+
+			CandidatesModel.viewResults(posID).then(function(rows){
+				res.status(200).json(rows);
+			})
+		}catch(err){
+			res.status(404).json({error: err});
+		}
 	}
+	
 }
 

@@ -80,5 +80,35 @@ module.exports = {
 				};
 			})
 		});
+	},
+
+	viewCandidates : function(ID){
+		return new Promise (function(resolve, reject){
+			const query = "SELECT * FROM applier WHERE posID = ? AND status = ?";
+			connection.query(query,[ID,"APPROVED"],
+				(err,rows) => {
+				if (err) {
+					reject (err);
+				} else {
+					resolve(rows)
+				};
+			})
+		});
+	},
+
+
+	viewResults : function(ID){
+		return new Promise (function(resolve, reject){
+			const query = "SELECT * FROM candidatesvotes ";
+			connection.query(query,
+				(err,rows) => {
+				if (err) {
+					reject (err);
+				} else {
+					resolve(rows)
+				};
+			})
+		});
 	}
+
 }
