@@ -97,10 +97,25 @@ module.exports = {
 	},
 
 
-	viewResults : function(ID){
+	viewResults : function(){
 		return new Promise (function(resolve, reject){
 			const query = "SELECT * FROM candidatesvotes ";
 			connection.query(query,
+				(err,rows) => {
+				if (err) {
+					reject (err);
+				} else {
+					resolve(rows)
+				};
+			})
+		});
+	},
+
+
+	RetrieveCandidate : function(ID){
+		return new Promise (function(resolve, reject){
+			const query = "SELECT * FROM applier WHERE ApplyId = ? ";
+			connection.query(query,[ID],
 				(err,rows) => {
 				if (err) {
 					reject (err);

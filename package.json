@@ -1,0 +1,36 @@
+{
+  "name": "nodejs",
+  "version": "14.18.0",
+  "description": "nodejs package",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.13",
+    "npm": "^6.14.15",
+    "sequelize": "^6.7.0",
+    "simple-excel-to-json": "^2.3.0",
+    "tailwindcss": "^2.2.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" :"nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/jadogbpalmer6.git"
+  },
+  "author": "jadon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github.com/jadogbpalmer6/issues"
+  },
+  "homepage": "https://github.com/github.com/jadogbpalmer6#readme"
+}

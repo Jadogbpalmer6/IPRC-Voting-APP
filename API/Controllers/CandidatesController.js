@@ -99,18 +99,22 @@ module.exports = {
 		}
 	},
 
-
-	viewResults : function(req,res){
+}
+	exports.viewResults = async(req,res) => {
 		try{
-			const posID = req.params.id;
+			CandidatesModel.viewResults().then(function(rows){
+				const candidates = await rows.map(candidate => {
+			      return {
+			      	CandidatesModel.RetrieveCandidate(candidate.candid),
+			        marks : candidate.marks,
+			      }
+			    });
 
-			CandidatesModel.viewResults(posID).then(function(rows){
-				res.status(200).json(rows);
+			    res.send(candidates);
 			})
 		}catch(err){
 			res.status(404).json({error: err});
 		}
 	}
 	
-}
 
