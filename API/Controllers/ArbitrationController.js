@@ -90,6 +90,16 @@ module.exports = {
 			}catch(err){
 				res.status(404).json({'error': err});
 			}
+		},
+
+		report :  function(req,res){
+			try{
+				ArbitrationModel.report().then(function(rows){
+					res.status(200).json(rows);
+				})
+			}catch(err){
+				res.status(404).json({'error': err});
+			}
 		}
 
 }

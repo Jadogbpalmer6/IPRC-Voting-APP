@@ -10,6 +10,8 @@ auth = require("../authentication");
 jsonParser = bodyParser.json();
 
 router.get('/all',auth.authenticateArbitrator,usersController.all)
+router.get('/all',auth.authenticateArbitrator,usersController.all)
+router.get('/winners',usersController.winners)
 router.get('/vote/:id',auth.authenticateVoter,votersController.vote)
 
 

@@ -99,7 +99,7 @@ module.exports = {
 
 	viewResults : function(){
 		return new Promise (function(resolve, reject){
-			const query = "SELECT * FROM candidatesvotes ";
+			const query = "SELECT * FROM candidatesvotes JOIN applier ON candidatesvotes.candid = applier.ApplyId JOIN positions ON applier.posID = positions.positionID";
 			connection.query(query,
 				(err,rows) => {
 				if (err) {
@@ -112,18 +112,18 @@ module.exports = {
 	},
 
 
-	RetrieveCandidate : function(ID){
-		return new Promise (function(resolve, reject){
-			const query = "SELECT * FROM applier WHERE ApplyId = ? ";
-			connection.query(query,[ID],
-				(err,rows) => {
-				if (err) {
-					reject (err);
-				} else {
-					resolve(rows)
-				};
-			})
-		});
-	}
+	// RetrieveCandidate : function(ID){
+	// 	return new Promise (function(resolve, reject){
+	// 		const query = "SELECT * FROM applier WHERE ApplyId = ? ";
+	// 		connection.query(query,[ID],
+	// 			(err,rows) => {
+	// 			if (err) {
+	// 				reject (err);
+	// 			} else {
+	// 				resolve(rows[0])
+	// 			};
+	// 		})
+	// 	});
+	// }
 
 }

@@ -99,14 +99,23 @@ module.exports = {
 		}
 	},
 
-	viewResults : function(req,res){
+
+	viewResults : async(req,res) => {
 		try{
-			res.json('result test')
+			const Results = await CandidatesModel.viewResults()
+			// const candidates = await Promise.all(rows.map( async candidate => {
+			// 	const candidate_Data = await CandidatesModel.RetrieveCandidate(candidate.candid)
+			// 	console.log(candidData)
+		 //        return {
+			//       	candidate_Data,
+			//         marks : candidate.marks,
+			//       }
+		 //    }));
+
+		    res.send(Results);
 		}catch(err){
 			res.status(404).json({error: err});
 		}
 	}
-
 	
 }
-
